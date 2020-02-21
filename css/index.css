@@ -1,0 +1,342 @@
+html, body {
+    
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+.foto-home {
+    height: 200px;
+    margin-bottom: 15px;
+    border-radius: 10% 50% / 50% 10%;
+}
+.subtitulo-principal {
+    text-align: center;
+    font-family: "Open Sans Condensed", "Arial", serif;
+    font-size: 50%;
+}
+.saudacao {
+    margin: 20px;
+}
+.saudacao p {
+    color: #99A;
+    line-height: 1;
+}
+.saudacao-inicio {
+    color: #889;
+    font-size: 3em;
+}
+strong {
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+em {
+    font-size: 4em;
+    font-style: italic;
+
+    /*Para o transforme funcionar precisamos fazer com que o elemento seja um inline block*/
+    transform: rotate(-5deg) skew(-10deg);
+    display: inline-block;
+
+}
+.saudacao-ultima-linha {
+    text-align: right;
+    display: block;
+}
+.saudacao strong {
+    color: #000;
+}
+.saudacao em {
+    color: #851944;
+}
+.botao-index {
+    background-color: #851944;
+    color: #FFF;
+    border: .2em solid black;
+    width: 250px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    /*Importante, o "transition" deve ser inserido no elemento que deseja ver a transição, NÃO quando ele está com o seletor HOVER ou FOCUS*/
+    transition: 2s;
+    transition-delay: 0s;
+}
+.botao-index:hover, .botao-index:focus {
+    box-shadow: 0 0 20px;
+    background: #C54974;
+    transition-delay: 1s;    
+}
+.secao-inicio h2 {
+    text-transform: uppercase;
+}
+.trabalhos {
+    margin-top: 3rem;
+    background-color: #3C1D3D;
+    border-top: 10px solid #000;
+    border-bottom: 10px solid #000;
+    padding: 3rem;
+}
+.trabalhos h2 {
+    font-size: 3em;
+    color: #FFF;
+    padding-bottom: 3rem;
+}
+.trabalhos ul {
+    display: flex;
+    /*overflow: hidden;*/
+    border: 10px solid black;
+}
+.trabalhos li {
+    flex: 1;
+    /* não precisamos mais de float nem width!, graças ao FLEX
+    float: left;
+    width: 33.333%;
+    */
+}
+.trabalhos img {
+    width: 100%;
+    display: block;
+}
+.trabalhos a {
+    margin-top: 2rem;
+}
+.blog {
+    background-color: #999;
+    color: #FFF;
+    border-bottom: 10px solid #851944;
+    padding: 3rem;
+    position: relative;
+}
+.blog h2 {
+    font-size: 3em;
+    padding-bottom: 0rem;
+}
+.blog li a {
+    color: #FCF;
+}
+.blog li {
+    margin-bottom: 20px;
+}
+.blog a {
+    margin-top: 2rem;
+}
+#maroto {
+    margin-top: 3rem;
+}
+/*
+footer {
+    background-color: #000;
+    color: #FFF;
+}
+*/
+.rodape-pagina a {
+    color: #F99;
+}
+main {
+    width: 100%;
+    padding-bottom: 0;
+    float: none;
+    margin: auto;
+    padding-bottom: 30px;
+    clear: both;
+    margin-bottom: 5rem;
+}
+
+/*=============Palavras Display==================*/
+
+
+/*Para as palavras ficarem posicionadas em relação ao header e não a janela.*/
+header {
+    position: relative;
+}
+
+/*Propriedade de cada palavra no display*/
+.palavra-home {
+    position: absolute;
+    font-family: "Shadows Into Light", cursive;
+    font-weight: bold;
+    color: #D5447E;
+    font-size: 1em;
+}
+
+.eficiencia {
+    top: 20%;
+    left: 75%;
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+}
+
+.boas-praticas {
+    top: 70%;
+    left: 20%;
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+}
+
+.codigo-limpo {
+    top: 45%;
+    left: 10%;
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+}
+
+.css3 {
+    top: 50%;
+    left: 30%;
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+}
+
+.html5 {
+    top: 40%;
+    left: 80%;
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+}
+
+.javascript {
+    top: 10%;
+    left: 60%;
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+}
+
+.acessibilidade {
+    top: 30%;
+    left: 25%;
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+}
+
+.responsivo {
+    top: 15%;
+    left: 15%;
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+}
+
+.otimizacoes {
+    top: 60%;
+    left: 70%;
+    -webkit-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+}
+
+.agilidade {
+    top: 10%;
+    left: 30%;
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+}
+
+.design {
+    top: 35%;
+    left: 65%;
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+}
+
+/*=============================*/
+
+.blog > a {
+    margin-top: 60px;
+}
+
+#banner-twitter {
+    font-family: "Open Sans Condensed", "Arial", serif;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background: #5e35b1;
+    border: 0.2em #000 solid ;
+    width: 300px;
+    margin: auto;
+    padding: 15px;
+    display: block;
+    
+    /*Guambiarra para mover o elemento inclinado.*/
+    position: absolute;
+    right: -100px;
+    top: -50px;
+ 
+    /*Dizemos aqui em que ponto ele vai começar a girar, utilizando a ponta esquerda superior como base*/
+    transform-origin: top left;
+    /*Depois de dizer por onde começar a inclinação, precisa do grau de inclinação desse elemento.*/
+    transform: rotate(45deg);
+
+/*Essa linha é a solução do professor , mas deu erro.
+    transform: translate(calc(.707 * (3.5em - 100%) + 100%), calc(-.707 * 3.5em)) rotate(45deg);
+}
+*/
+}
+h1 {
+    text-shadow: 5px 5px black;
+}
+h2 {
+    text-shadow: 10px 10px black, -10px -10px orange;
+}
+
+footer {
+    background: black;
+    color: white;
+    padding: 20px;
+}
+
+.inicio-post {
+    /*
+    Criado essa classe na tag paragrafo, agora usando o position absolute (lembrando que o elemento pai deve ser fixo, absoluto ou relativo., nesse caso coloquei o pai na classe "blog", e adicionei um position relative.)
+    */
+    color: black;
+    background-color: #FFF;
+    position: absolute;
+    top: 9em;
+    right: 3em;
+    height: 6em;
+    padding: 1em;
+}
+
+.blog a:hover + .inicio-post {
+    visibility:visible;
+}
+
+.inicio-post {
+    visibility:hidden;
+}
+
+.blog li a:hover {
+    background: white;
+    border-right:600px solid white;
+    padding: 2px;
+}
+
+.blog a:hover,
+.blog a:focus {
+    background-color: #F2FFFC;
+    color: #F26;
+}
+/*Ordenando os elemento pelo flex, lembre-se é preciso colocar um numero de ordem em cada um deles.*/
+.trabalhos li:nth-of-type(1){
+    order: 1;
+    transform: scale(1.2);
+}
+.trabalhos li:nth-of-type(2){
+    order: 0;
+}
+.trabalhos li:nth-of-type(2){
+    order: 2;
+}
+/*
+Por fim, para conseguir as bordas ao redor da imagem central, podemos tirar a borda e o overflow da lista e colocar apenas a borda em cada um de seus itens:
+
+.trabalhos ul {
+    /* removemos a borda e o overflow daqui 
+}
+
+.trabalhos li {
+    border: .5em solid #000;
+}
+
+Mas não vou fazer isso!
+*/

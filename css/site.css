@@ -1,0 +1,161 @@
+/* A chave para deixar o site flexivel aumentando e diminuindo os elementos do site de forma uniforme em conjunto, é usar unidades relativas como %, em/rem, ex/ch, ETC; Uma boa dica é adicionar o font-size na tag <html>, assim ele passa a ser o elemento fai de base, não o navegador. */
+
+html {
+    font-size: 100%;
+}
+body {
+    font-family: "Crimson Text", serif;
+    background: #F2FFFC;
+}
+h1, h2 {
+    font-family: "Open Sans Condensed", "Arial", serif;
+}
+.titulo-principal {
+    color: white;
+    text-align: center;
+    background: #851944;
+    font-size: 300%;
+    padding: 2rem;
+    border-bottom: .5rem solid #000;
+    width: 100%;
+}
+/*NOTE: depois ver no livro do Jon como funciona o text-align justify
+*/
+p {
+    font-family: "Montserrat";
+    text-align: justify;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+nav a {
+    color: #F2FFFC;
+}
+strong {
+    font-weight: bold;
+}
+em {
+    font-style: italic;
+}
+/*.icones-redes-sociais {
+    display: inline-flex;
+}*/
+.container {
+    width: 50rem;
+    margin: auto;
+    line-height: 1.5;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+h1 {
+    text-transform: uppercase;
+    text-shadow: 5px 5px black;
+}
+.github {
+    background-image: url(../imagens/github.png);
+  }
+.twitter {
+    background-image: url(../imagens/twitter.png);
+}
+
+.linkedin {
+    background-image: url(../imagens/linkedin.png);
+}
+nav a  {
+    text-transform: lowercase;
+}
+main {
+    float: left;
+    /*O tamanho é calcudo com base 100% o tamanho da tela - 0.9% * 300px (algo em torno de 270px ....0.9 * 300)...esse 300px é a largura da foto do perfil.*/
+    /*Lembrando o main é onde vai o conteudo da página, do blog, contato etc, o main já está centralizado*/
+    /*Agora sim, quando vc da zoom ou diminue , ou altera o tamanho da janela o main e a foto ...se conversam e diminue em conjunto*/
+    width: calc(100% - 0.9 * 300px);
+    padding-bottom: 30px;
+}
+.rodape-pagina {
+    clear: both;
+    padding: 20px;
+    color: white;
+}
+.subtitulo-texto {
+    clear: both;
+    font-size: 30px;
+}
+.rodape-pagina {
+    position: fixed;
+    width: 100%;    
+    bottom: 0;
+}
+.rodape-pagina {
+    background-image: radial-gradient(ellipse at left bottom,
+    rgba(60, 29, 61, 0.8),
+    rgba(60, 29, 61, 0.8) 65%,
+    black 65%,
+    black 70%,
+    transparent 70%,
+    transparent);
+width:100%;
+background-size: 25% 100%;
+background-repeat: no-repeat;
+}
+main a:hover,
+main a:focus,
+footer a:hover,
+footer a:focus {
+    color: red;
+}
+/*Tudo sobre o menu com a foto*/
+.navegacao-site a:hover,
+.navegacao-site a:focus {
+    text-shadow: 0 0 2px pink;
+}
+.navegacao-site {
+    background: #3C1D3D;
+    color: white;
+}
+.navegacao-site a {
+    color: inherit;
+    font-family: "Open Sans Condensed", sans-serif;
+    text-decoration: none;
+}
+.navegacao-site {
+    text-align: center;
+}
+.navegacao-site h1 {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+.minha-foto {
+    width: 300px;
+    box-sizing: border-box;
+    border-left: black solid 0.5rem;
+    border-bottom: black solid 0.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.navegacao-site {
+    padding: 20px;
+    border-left: black solid 5px;
+    border-bottom: black solid 5px;
+    position: relative;
+    right: 0;
+    /*Top 300 por causa do tamanho da foto.*/
+    top: 300px;
+}
+.navegacao-site {
+    float: right;
+}
+.icones-redes-sociais {
+    display: inline-flex;
+}
+.icones-redes-sociais a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    /*
+    text-indent: -9999px;
+    */
+    text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}

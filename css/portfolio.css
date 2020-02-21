@@ -1,0 +1,34 @@
+
+.portfolio {
+    /*Ativa o flex no elemento pai que é o ol com a classe "portfolio"*/
+    display: flex;
+    /*Ativa o suporte a quebra de linha nos elemento., OK, com isso eles ficaram um embaixo do outro. */
+    flex-wrap: wrap;
+}
+.portfolio li:first-child {
+    flex-basis: 100%;
+}
+.container li {
+/*display: inline-block; /* Mudei para o FLEX - Alinhamento de elementos lado a lado*/
+    border: 8px solid black; /*borda de 8px solida e preta*/
+    background-color: #FAFFFC;
+    /*width: 45%;*/
+    box-sizing: border-box;
+    padding: 16px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    /*Usando o FLEX*/
+    /*Agora, para regular o tamanho dos elementos, podemos usar a propriedade flex especificando que o elemento deve crescer e diminuir na mesma proporção que os outros, mas com um mínimo de 45% de largura. Então temos*/
+    flex: 1 1 45%;
+}
+/*
+teste... 
+Uma vez definida a largura das caixinhas, veremos que as imagens "vazam" pra fora delas.
+Para ajustar isso, basta dizer que queremos que as imagens dentro do <ul> tenham 100% da largura, e não mais que isso. Ou seja:
+*/
+.container img {
+width: 100%;
+}
+img {
+    box-shadow: 0 0 4px #000;
+}

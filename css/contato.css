@@ -1,0 +1,121 @@
+input:invalid {
+    box-shadow: 0 0 3px red;
+}
+
+input:focus, textarea:focus {
+    border: 2px yellow solid;
+    background-color: #FFD;
+}
+.titulo-form {
+    font-weight: bold ;
+    font-size: 40px;
+    text-align: center;
+}
+input[id="nome"], input[id="email"], textarea {
+    /* Força o navegador a usar a mesma fonte da página */
+    font-family: inherit;
+    /* Inclusive o tamanho dela */
+    font-size: 100%;
+    padding: .25em .5em;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+label {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+button {
+    background-color: #851944;
+    color: #FFF;
+    border: .2em solid black;
+    width: 250px;
+    display: block;
+    float: right;
+    text-align: center;
+    padding: 10px;
+}
+
+/*Solução do Professor:
+ Precisamos tirar a borda que o navegador coloca por padrão 
+ border: 0;
+ padding: .5em 1em;
+ font-family: "Open Sans Condensed", sans-serif;
+ background-color: #3C1D3D;
+ color: white;
+ font-size: 1.2em;
+
+ Faz com que o botão apareça na direita 
+ 
+ margin-left: auto;
+ margin-top: 1em;
+ display: block;
+*/
+button:hover, button:focus {
+    background-color: #8C1D3D; 
+}
+/*Selecione o "Assunto", fica em negrito e com tamanho 20px*/
+form fieldset:nth-last-of-type(2) {
+    font-weight: bold;
+    font-size: 20px;
+}
+/*Abaixo seleciomos o primeiro input com o ID "outro",  com o caractere "~"(tio) estamos dizendo que selecionamos o irmão seguinte dele , todos o "input", e aplicamos o estilo "display: none"*/
+#outro ~ input {
+    display: none;
+}
+/*Então, se o primeiro input que tem o ID "outro"(e é um seletor do tipo radio, aquela bolinha) está selecionado (sabemos disso graças ao checked) sabemos que ele é verdadeiro ...e aplicamos o estilo no irmão dele, como abaixo, abra o HTML e veja como fica --> contato.html*/
+#outro:checked ~ input {
+    display: inline;
+}
+/*Apenas uma outra forma de fazer isso*/
+/*
+input[value="Outro"] ~ input {
+    display: none;
+}
+input[value="Outro"]:checked ~ input {
+    display: inline;
+}
+*/
+
+/*==============================Icone do lado do input============================*/
+
+/*Selecina a LABEL com o "for" onde seu valor é "nome",  */
+label[for="nome"], label[for="email"] {
+    /*Position relative para servir de apoio*/
+    position: relative;
+}
+/*com o after o elemento é adicionado antes, lembrando que o content precisa ser vazio*/
+label[for="nome"]:after, label[for="email"]::after {
+    
+    content: "";
+    /*Cor de fundo do pseuelemento*/
+    background-color: #666;
+    /*Não faz o icone repetir*/
+    background-repeat: no-repeat;
+    /*Caminho do icone*/
+    background-image: url(../imagens/name.png) ;
+    /*Para renderizar a imagem do tamanho correto, background-size com 50% de altura e largura*/
+    background-size: 50% 50%;
+    /*O elemento vai ter os seguinte tamanhos.*/
+    width: 1.5em;
+    height: 1.5em;
+    /*Centralize a imagem no centro do elemento*/
+    background-position: center;
+    /*Posicione ela fora do fluxo, e abaixo da label., usamos um top 120% pra ela descer junto com o left zero, pra ela se encaixar bem do lado esquerdo.*/
+    /*Lembre-se de usar o position relative na label(para ela virar referencia para o pseudoelemento.) ..pra da sim poder usar o position absolute aqui.*/
+    position: absolute;
+    top: 120%;
+    left:0;
+}
+/*Pega o elemento com id nome e diminue a largura do mesmo com base a tela e ao tamanho do icone que é 2em */
+#nome, #email {
+    width: calc(100% - 2em);
+    /*Joga ele pra direita usando o position relative com left 2em que é o tamanho do icone. se não fizer isso ela vai ficar pra esquerda, que é seu comportamento padrão*/
+    position: relative;
+    left: 2em;
+}
+
+label[for="email"]::after {
+    background-image: url(../imagens/email2.png);
+}

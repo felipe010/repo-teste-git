@@ -1,0 +1,153 @@
+/*Adicionando uma animação no H!*/
+h1 {
+    /*Veja que a pripriedade animation recebeu um valor chamado "aparece" que criamos, seria como uma variavel no CSS!, depois vem a duração da animação e a suavição da mesmo usando o ease-out*/
+    animation: aparece 2s ease-out;
+}
+/*Keyframe é como a declaração da animação (como um "var" no JS, "aparece" é a variavel e dentro dela fazemos a declaração da animação em si.)*/
+@keyframes aparece {
+    /*A linha de animação vai de 0 a 100%, e com isso adicionamos o que vai acontecer de zero a cem(dica, podemos usar em vez de 0% "from" e to em vez de 100%, que seria tipo...."a partir de" e "até ou para")*/
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.citacao-bio {
+    background-color: #D9E5E3;
+   /*EM é com base no tamanho do elemento pai ou body.*/
+    border: .5em solid #C2CCCA;
+   
+    padding: 1em;
+    margin: 1em 2em;
+    /*width: 30ch;*/
+    width: 30ch;
+    box-sizing: border-box;
+/*Aplicando o transition e animação*/
+
+/*No transition, é obrigado o tempo de transição, de resto é opcional*/
+
+/*Com o transform antes do tempo, estou indicando que essa transição aconteça apenas na pripriedade transform*/
+
+transition: transform 1s;
+/* ou --- Colocando uma virgula conseguimos adicionar controle em mais de uma pripriedade.*/
+transition: transform 1s, box-shadow 2s;
+
+/*Para mudar a suavização final da pripriedade selecionada com o transition, coloque o valor depois do tempo, como está abaixo; O "ease" tem outras opções, como final, começo ou nos dois*/
+transition: transform 1s linear, box-shadow 2s ease-in-out;
+
+/*Adiciona um delay na propriedade desejada, ela demora mais para aparecer comparado a outra.... Colocando a virgula, você indica o delay de cada pripriedade, da esquerda para direita...primeir, segundo e assim por diante*/
+transition-delay: 0ms, 1ms;
+/*Animação na citação*/
+position: relative;
+/*Propriedade animation com "variavel quica", informando o tempo e que ela vai ser continua usando o "infinite"*/
+animation: quica 1s infinite;
+/*Isso alterna a direção da animação*/
+animation-direction: alternate;
+/*Indica que a suavisação começa no começo da animação e não no final.*/
+animation-timing-function: ease-in;
+}
+@keyframes quica {
+    from {
+        top: 0;
+    }
+    to {
+        top: 1em;
+    }
+}
+.citacao-bio::before {
+
+content: '"';
+font-size: 300px;
+color: #bbb;
+position: absolute;
+line-height: .8em;
+
+}
+
+.citacao-bio > p {
+    position: relative;
+}
+
+.citacao-bio:nth-of-type(2n+1) {
+
+  float: left;
+  margin-left: 0;
+
+}
+
+.container > p::first-letter {
+  font-size: 200%;
+    font-weight: bold;
+    color: #3C1D3D;
+    text-shadow: 1px 1px #000;
+    margin-right: .2ch;
+    line-height: 1;
+
+  }
+
+.citacao-bio:nth-of-type(2n+2) {
+
+    float: right;
+    margin-right: 0;
+}
+
+
+/*MODAL maroto */
+blockquote:nth-of-type(2n+2):hover, blockquote:nth-of-type(2n+2):focus {
+box-shadow: 0 0 0 99999px rgba(0,0,0,.8);
+/*Sem virgula entre o rotate e o scale ...ele pega os dois atributos
+PERFEITO!!!!!
+*/
+transform: rotate(12deg) scale(1.1);
+z-index: 10;
+
+/*Pausando a animação na citação, quando o mouse passar cima da mesma*/
+animation-play-state: paused;
+}
+blockquote:nth-of-type(2n+1):hover, blockquote:nth-of-type(2n+1):focus {
+box-shadow: 0 0 0 99999px rgba(0,0,0,.8);
+transform: rotate(-12deg) scale(1.1);
+z-index: 10;
+/*Pausando a animação na citação, quando o mouse passar cima da mesma*/
+animation-play-state: paused;
+}
+
+cite {
+    font-style: italic;
+}
+/*=====Formatação da Tabela=======*/
+
+thead {
+    background-color: #3C1D3D;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*Lembrar, o espaço depois do tr para usar o firs-child, quer dizer que estamos selecionando o primeiro filho dele e não ...ele mesmo. */
+tbody tr :first-child {
+    background-color: #851944;
+    color: white;
+    font-weight: bold;
+}
+
+tbody tr :nth-child(2) {
+    background-color: #EEE;
+}
+
+td {
+    /*Lembr-se a borda precisa ser definida antes, para usar o spacing e separate*/
+    border: 5px solid white;
+    border-spacing: 0.25em;
+    border-collapse: separate;
+    padding: 1em;
+    
+}
+
+/*Selecina o td que tem o atributo "colspan" dentro*/
+td[colspan] {
+    font-style: italic;
+    text-align: center;
+    vertical-align: middle;
+}
